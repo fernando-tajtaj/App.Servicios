@@ -79,7 +79,7 @@ namespace App.Servicios.Controllers
 
             await context.SaveChangesAsync();
 
-            await juegoHub.Clients.All.SendAsync("MatchUpdated", juego);
+            await juegoHub.Clients.All.SendAsync("QuarterChanged", new { uuid = juego.Uuid, cuarto = juego.Quarter });
 
             return Ok(juego);
         }
