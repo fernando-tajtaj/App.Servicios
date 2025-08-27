@@ -45,7 +45,7 @@ namespace App.Servicios.Hubs
             });
         }
 
-        public async Task ActualizarTimer(string uuid, int remainingSeconds, bool isRunning)
+        public async Task ActualizarTiempo(string uuid, int remainingSeconds, bool isRunning)
         {
             await Clients.All.SendAsync("TimerUpdated", new
             {
